@@ -1,21 +1,22 @@
 Summary:	micro-misc font
 Summary(pl):	Font micro-misc
 Name:		xorg-font-font-micro-misc
-Version:	0.99.0
-Release:	0.01
-License:	MIT
+Version:	0.99.1
+Release:	0.1
+License:	Public Domain
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/font/font-micro-misc-%{version}.tar.bz2
-# Source0-md5:	2c685fff8b2e694ac164d48743fa00fb
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-micro-misc-%{version}.tar.bz2
+# Source0-md5:	a4b0a2f13315a2c52223cbf9eb5c1837
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util
 BuildRequires:	xorg-util-util-macros
+Requires(post,postun):	fontpostinst
+Requires:	%{_fontsdir}/misc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,7 +32,8 @@ Font micro-misc.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--with-fontdir=%{_fontsdir}/misc
 
 %{__make}
 
@@ -44,6 +46,13 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+fontpostinst misc
+
+%postun
+fontpostinst misc
+
 %files
 %defattr(644,root,root,755)
-%{_libdir}/X11/fonts/misc/*
+%doc COPYING ChangeLog
+%{_fontsdir}/misc/*.pcf.gz
