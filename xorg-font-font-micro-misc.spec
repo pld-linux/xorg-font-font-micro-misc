@@ -1,11 +1,11 @@
-Summary:	micro-misc font
-Summary(pl.UTF-8):	Font micro-misc
+Summary:	micro bitmap font
+Summary(pl.UTF-8):	Font bitmapowy micro
 Name:		xorg-font-font-micro-misc
 Version:	1.0.0
-Release:	0.1
+Release:	1
 License:	Public Domain
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/font/font-micro-misc-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/font/font-micro-misc-%{version}.tar.bz2
 # Source0-md5:	8c8bffd7540f05caa0dbb4e6e1d6c58e
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
@@ -19,10 +19,10 @@ Requires:	%{_fontsdir}/misc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-micro-misc font.
+micro bitmap font.
 
 %description -l pl.UTF-8
-Font micro-misc.
+Font bitmapowy micro.
 
 %prep
 %setup -q -n font-micro-misc-%{version}
@@ -54,4 +54,4 @@ fontpostinst misc
 %files
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog
-%{_fontsdir}/misc/*.pcf.gz
+%{_fontsdir}/misc/micro.pcf.gz
