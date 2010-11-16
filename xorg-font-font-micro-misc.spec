@@ -1,19 +1,19 @@
 Summary:	micro bitmap font
 Summary(pl.UTF-8):	Font bitmapowy micro
 Name:		xorg-font-font-micro-misc
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	Public Domain
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-micro-misc-%{version}.tar.bz2
-# Source0-md5:	2515f3fd42de917d088869a4e8d9813b
+# Source0-md5:	143c228286fe9c920ab60e47c1b60b67
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util >= 1.1
+BuildRequires:	xorg-font-font-util >= 1.2
 BuildRequires:	xorg-util-util-macros >= 1.3
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/misc
