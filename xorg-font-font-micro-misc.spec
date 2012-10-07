@@ -2,7 +2,7 @@ Summary:	micro bitmap font
 Summary(pl.UTF-8):	Font bitmapowy micro
 Name:		xorg-font-font-micro-misc
 Version:	1.0.3
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-micro-misc-%{version}.tar.bz2
